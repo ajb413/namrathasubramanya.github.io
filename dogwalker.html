@@ -9,7 +9,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Walk My Dog</title> 
 <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.20.1.js"></script>
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?zoom=15&key=AIzaSyCq3XS0PzYlTA9fll1TFws9EeDtHgTcsj4"></script>
 <script>
   var pubnub = new PubNub({
     subscribeKey: 'sub-c-0cd4f18e-11d5-11e8-b32f-5ea260837941', 
@@ -76,7 +76,7 @@ var options = {
 
 function error(msg) {
   var s = document.querySelector('#status');
-  s.innerHTML = typeof msg == 'string' ? msg : "failed";
+  s.innerHTML = typeof msg == 'string' ? msg : "Loading";
   s.className = 'fail';
 
 }
