@@ -1,94 +1,92 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-     
-<meta charset="utf-8">
-<meta name="viewport" content="width=620" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>Walk My Dog</title> 
-<script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.20.1.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?zoom=15&key=AIzaSyCq3XS0PzYlTA9fll1TFws9EeDtHgTcsj4"></script>
-<script>
-  var pubnub = new PubNub({
-    subscribeKey: 'sub-c-0cd4f18e-11d5-11e8-b32f-5ea260837941', 
-    publishKey: 'pub-c-146542ff-637d-43fa-a28a-cad0dbaf697e' 
-  });
-function success(position) {
-  var s = document.querySelector('#status');
-
-  if (s.className == 'success') {
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=620" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis. com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Walk My Dog</title> 
     
-    return;
-  }
+    <!-- PubNub JavaScript SDK -->
+    <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.20.1.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?zoom=15&key=AIzaSyCq3XS0PzYlTA9fll1TFws9EeDtHgTcsj4"></script>
+    <script>
+      var pubnub = new PubNub({
+        subscribeKey: 'sub-c-0cd4f18e-11d5-11e8-b32f-5ea260837941', //replace your subscribe key here
+        publishKey: 'pub-c-146542ff-637d-43fa-a28a-cad0dbaf697e' //replace your publish key here
+      });
+      
+      function success(position) {
+        var s = document.querySelector('#status');
+        if (s.className == 'success') {
+          return;
+        }
 
-  s.innerHTML = " ";
-  s.className = 'success';
+      s.innerHTML = " ";
+      s.className = 'success';
 
-  var mapcanvas = document.createElement('div');
-  mapcanvas.id = 'mapcanvas';
-  mapcanvas.style.height = '400px';
-  mapcanvas.style.width = '560px';
+      var mapcanvas = document.createElement('div');
+      mapcanvas.id = 'mapcanvas';
+      mapcanvas.style.height = '400px';
+      mapcanvas.style.width = '560px';
 
-  document.querySelector('article').appendChild(mapcanvas);
+      document.querySelector('article').appendChild(mapcanvas);
 
-  var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-  console.log(position.coords.latitude);
-  var myOptions = {
-    zoom: 15,
-    center: latlng,
-    mapTypeControl: false,
-    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  };
-  var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
+      var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      console.log(position.coords.latitude);
+      var myOptions = {
+        zoom: 15,
+        center: latlng,
+        mapTypeControl: false,
+        navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+      var map = new google.maps.Map(document.getElementById("mapcanvas"), myOptions);
 
-  var marker = new google.maps.Marker({
-      position: latlng,
-      map: map,
-      title:""
-  });
+      var marker = new google.maps.Marker({
+          position: latlng,
+          map: map,
+          title:""
+      });
 
   
-  pubnub.publish(
-    {
-        message: {
-            "latitude": position.coords.latitude,
-            "longitude": position.coords.longitude
+      pubnub.publish(
+        {
+            message: {
+                "latitude": position.coords.latitude,
+                "longitude": position.coords.longitude
+            },
+            channel: 'walkmydog'
         },
-        channel: 'walkmydog'
-    },
-    function (status, response) {
-        if (status.error) {
-            console.log(status)
-        } else {
-            console.log("message Published w/ timetoken", response.timetoken)
-        }
-    })
-}
+        function (status, response) {
+            if (status.error) {
+                console.log(status)
+            } else {
+                console.log("message Published w/ timetoken", response.timetoken)
+            }
+        })
+    }
 
-var options = {
-  enableHighAccuracy: false,
-  timeout: 5000,
-  maximumAge: 0
-};  
+    var options = {
+      enableHighAccuracy: false,
+      timeout: 5000,
+      maximumAge: 0
+    };  
 
-function error(msg) {
-  var s = document.querySelector('#status');
-  s.innerHTML = typeof msg == 'string' ? msg : "Loading";
-  s.className = 'fail';
+    function error(msg) {
+      var s = document.querySelector('#status');
+      s.innerHTML = typeof msg == 'string' ? msg : "Loading";
+      s.className = 'fail';
+    }
 
-}
-
-if (navigator.geolocation) {
-  navigator.geolocation.watchPosition(success, error, options);
-} else {
-  error('not supported');
-}
-
-</script>
-  </head>
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(success, error, options);
+    } else {
+      error('not supported');
+    }
+  </script>
+</head>
 <body style="background-image: url('dogwalkerbackground.jpeg');">
   <nav class="navbar navbar-inverse">
       <div class="container-fluid">
@@ -97,7 +95,7 @@ if (navigator.geolocation) {
         </div>
       </div>
   </nav>
- <article>
+  <article>
     <p><span id="status">Loading</span></p>
   </article>
 </body>
