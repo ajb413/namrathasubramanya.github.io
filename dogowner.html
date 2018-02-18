@@ -1,19 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-    <!-- PubNub JavaScript SDK -->
     <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.19.0.min.js"></script>
     <title>Walk My Dog</title>
     <style>
@@ -21,13 +13,11 @@
         height: 400px;
         width: 560px;
       }
-      
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
       }
-      
       #latlng {
         width: 225px;
       }
@@ -42,58 +32,9 @@
       </div>
     </nav>
     <div id="map"></div>
-    <script>
-
-      var pubnub = new PubNub({
-        subscribeKey: 'sub-c-0cd4f18e-11d5-11e8-b32f-5ea260837941', 
-        publishKey: 'pub-c-146542ff-637d-43fa-a28a-cad0dbaf697e' 
-      });
-
-      function initMap() {
-        var latValue, longValue;
-
-        pubnub.addListener({
-          message: function(message){
-            latValue = message.message.latitude;
-            longValue = message.message.longitude;
-           
-            var map = new google.maps.Map(document.getElementById('map'), {
-               zoom: 15,
-               center: {lat: latValue, lng: longValue}
-            });
-            var geocoder = new google.maps.Geocoder;
-            var infowindow = new google.maps.InfoWindow;
-            
-            function geocodeLatLng(geocoder, map, infowindow, latValue, longValue) {
-              var latlng = {lat: latValue, lng: longValue};
-              geocoder.geocode({'location': latlng}, function(results, status) {
-              if (status === 'OK') {
-                if (results[0]) {
-                  map.setZoom(15);
-                    var marker = new google.maps.Marker({
-                        position: latlng,
-                        map: map
-                     });
-                     infowindow.setContent(results[0].formatted_address);
-                     infowindow.open(map, marker);
-                   } else {
-                        window.alert('No results found');
-                   }
-                 } else {
-                    window.alert('Geocoder failed due to: ' + status);
-                 }
-              });
-            }
-            geocodeLatLng(geocoder, map, infowindow, latValue, longValue);
-          }
-        });
-
-        pubnub.subscribe({
-            channels: ['walkmydog']
-        });
-      }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?zoom=15&key=AIzaSyCq3XS0PzYlTA9fll1TFws9EeDtHgTcsj4&callback=initMap">
+    <script type="text/javascript" src="dogowner.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?zoom=15&key=AIzaSyCq3XS0PzYlTA9fll1TFws9EeDtHgTcsj4&callback=initMap">
     </script>
   </body>
 </html>
