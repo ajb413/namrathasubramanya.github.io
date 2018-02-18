@@ -23,7 +23,22 @@ This is a web application which can be used on your device using this link:
 # API Reference - PUBNUB
 PubNub offers realtime infrastructure-as-a-service, and provides enterprise-grade security, 99.999% SLA-backed reliability, and global scalability to support the largest realtime deployments, all via simple APIs and 70+ SDKs. Additionally, developers can take advantage of value added features for application areas like chat, collaboration, IoT device control, and realtime updates to further accelerate build and release times.
 
-# Tests
+# Screenshots
+
+  ## Homepage 
+  ![Homepage](Homepage1.png)
+
+  ## Description
+  ![Description](Homepage%202.png) 
+  
+  ## Dog walker location share
+  ![Share Location](Share%20Location.png) 
+  
+  ## Dog walker's current location
+  ![Dog Owner](Dog%20Walker.png) 
+  
+  ## Dog owner recieving location of dog walker
+  ![Dog Walker](Dog%20Owner.png) 
 
 
 # Contributors
