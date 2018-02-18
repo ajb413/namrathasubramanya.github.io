@@ -25,7 +25,7 @@ PubNub offers realtime infrastructure-as-a-service, and provides enterprise-grad
 
 # Screenshots
 
-![Alt text](Homepage 1.png?raw=true "Homepage 1")
+![Alt text](namrathasubramanya.github.io/Homepage 1.png?raw=true "Homepage 1")
 
 
 # Contributors
