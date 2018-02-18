@@ -25,7 +25,20 @@ PubNub offers realtime infrastructure-as-a-service, and provides enterprise-grad
 
 # Screenshots
 
-![Alt text](Homepage1.png)
+  ## Homepage 
+  ![Homepage](Homepage1.png)
+
+  ## Description
+  ![Description](Homepage%202.png) 
+  
+  ## Dog walker location share
+  ![Share Location](Share%20Location.png) 
+  
+  ## Dog walker's current location
+  ![Dog Owner](Dog%20Owner.png) 
+  
+  ## Dog owner recieving location of dog walker
+  ![Dog Walker](Dog%20Walker.png) 
 
 
 # Contributors
