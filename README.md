@@ -35,10 +35,10 @@ PubNub offers realtime infrastructure-as-a-service, and provides enterprise-grad
   ![Share Location](Share%20Location.png) 
   
   ## Dog walker's current location
-  ![Dog Owner](Dog%20Owner.png) 
+  ![Dog Owner](Dog%20Walker.png) 
   
   ## Dog owner recieving location of dog walker
-  ![Dog Walker](Dog%20Walker.png) 
+  ![Dog Walker](Dog%20Owner.png) 
 
 
 # Contributors
