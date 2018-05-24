@@ -11,8 +11,8 @@
 
 
 var pubnub = new PubNub({
-    subscribeKey: 'sub-c-0cd4f18e-11d5-11e8-b32f-5ea260837941', // Enter your subscribe key here
-    publishKey: 'pub-c-146542ff-637d-43fa-a28a-cad0dbaf697e' // Enter your publish key here
+    subscribeKey: 'Enter your subscribe key here', 
+    publishKey: 'Enter your publish key here' 
   });
 
 function success(position) {
