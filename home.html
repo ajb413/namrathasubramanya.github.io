@@ -16,7 +16,11 @@
   }
   p {font-size: 16px;}
   .margin {margin-bottom: 45px;}
+  #intro {
+     margin-top: 80px;
+  }
   .bg-1 { 
+   
       background-color: #1abc9c; /* Green */
       color: #ffffff;
   }
@@ -27,6 +31,10 @@
   .bg-3 { 
       background-color: #ffffff; /* White */
       color: #555555;
+      
+  }
+  .row {
+    text-align: left;
   }
   .bg-4 { 
       background-color: #2f2f2f; /* Black Gray */
@@ -53,7 +61,7 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -61,7 +69,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Me</a>
+      <a class="navbar-brand" href="#">Namratha's portfolio</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -74,64 +82,57 @@
   </div>
 </nav>
 
-<!-- First Container -->
 <div id="intro" class="container-fluid bg-1 text-center">
-  <h3 class="margin">Namratha Mandya Subramanya</h3>
-  <!-- <img src="Passportsizephoto.jpeg" class="img-responsive img-circle margin" style="display:inline" alt="Namratha" width="100" height="100"> -->
+  <h3 class="margin">NAMRATHA MANDYA SUBRAMANYA</h3>
   <h3>Computer Science Graduate Student</h3>
 </div>
 
-<!-- Second Container -->
 <div id="introduction" class="container-fluid bg-2 text-center">
   <h3 class="margin">INTRODUCTION</h3>
   <p>Actively seeking for co-op/full-time opportunities. Pursuing MS in Computer Science from San Diego State University. </p>
-  <a href="#" class="btn btn-default btn-lg">
+ <!--  <a href="#" class="btn btn-default btn-lg">
     <span class="glyphicon glyphicon-search"></span> Search
-  </a>
+  </a> -->
 </div>
 
-<!-- Third Container (Grid) -->
 <div id="experience" class="container-fluid bg-3 text-center">    
   <h3 class="margin">EXPERIENCE</h3><br>
   <div class="row">
     <div>
       <h3>PubNub, Inc, San Francisco Bay Area, CA - Software Intern</h3>
-      <p>
-        • Currently playing the role of Developer Evangelist by creating technical content for publication through blogs, demos, tutorials and web apps to show developers how to implement specific solutions or use new technologies using PubNub
-
-• Worked on Raspberry Pi to build smart lock and implemented Google OAuth, built an image recognition system using Cloud Vision API that sends real-time alerts and an Online bidding dashboard using ReactJS
-
-• Created a design specification for ChatEngine UI and built friends list using ReactJS
-
-• Built a multi-player VR bowling game using A-Frame on WebVR
+      <ul text-align="left">
+        <li>Currently playing the role of Developer Evangelist by creating technical content for publication through blogs, demos, tutorials and web apps to show developers how to implement specific solutions or use new technologies using PubNub</li>
+        <li>Worked on Raspberry Pi to build smart lock and implemented Google OAuth, built an image recognition system using Cloud Vision API that sends real-time alerts and an Online bidding dashboard using ReactJS</li>
+        <li>Created a design specification for ChatEngine UI and built friends list using ReactJS</li>
+        <li>Built a multi-player VR bowling game using A-Frame on WebVR</li>
       </p>
-      <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
     </div>
     <div> 
       <h3>San Diego State University, San Diego, CA - Graduate Assistant</h3>
-      <p>• Designed the Environmental Engineering Department Website using HTML and CSS in OU Campus
-
-• Created a website for the research team of Safe Water on WordPress</p>
-      <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <ul>
+        <li>Designed the Environmental Engineering Department Website using HTML and CSS in OU Campus</li>
+        <li>Created a website for the research team of Safe Water on WordPress</li>
+      </ul>
     </div>
     <div> 
       <h3>News Technology Services, Bengaluru, India  - Associate Software Engineer </h3>
-      <p>• Worked on Salesforce for NewsCorp UK & Ireland Ltd by gathering analyzing technical requirements and writing object-oriented code in Apex. Also wrote test classes with 75% code coverage</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <ul>
+        <li>Worked on Salesforce for NewsCorp UK & Ireland Ltd by gathering analyzing technical requirements and writing object-oriented code in Apex. Also wrote test classes with 75% code coverage
+        </li>
+      </ul>
     </div>
     <div> 
       <h3>DemandFarm, Bengaluru, India - Product Engineer </h3>
-      <p>• Designed custom front-end for Salesforce CRM using JavaScript, HTML, CSS, Bootstrap and jQuery. Redesigned the Custom Controllers by optimizing the code and wrote Apex test cases
-
-• Developed various features for the Opportunity Pipeline using jQuery along with Visualforce. Prepared Configuration workbook and Technical Documentation
-
-</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <ul>
+        <li>Designed custom front-end for Salesforce CRM using JavaScript, HTML, CSS, Bootstrap and jQuery. Redesigned the Custom Controllers by optimizing the code and wrote Apex test cases</li>
+        <li>Developed various features for the Opportunity Pipeline using jQuery along with Visualforce. Prepared Configuration workbook and Technical Documentation</li>
+      </ul>
     </div>
     <div> 
       <h3>Tricon Infotech, Bengaluru, India - Intern</h3>
-      <p>• Designed the User Interface of web chat application using HTML, CSS and jQuery and also made the design responsive</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <ul>
+        <li>Designed the User Interface of web chat application using HTML, CSS and jQuery and also made the design responsive</li>
+        </ul>
     </div>
   </div>
 </div>
@@ -141,12 +142,10 @@
   <div> 
       <h3>San Diego State University, San Diego, CA, 2017 - 2019</h3>
       <p>Master of Science in Computer Science</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
   </div>
   <div> 
       <h3>JSS Academy of Technical Education, Bengaluru, India, 2011 - 2015</h3>
       <p>Bachelor of Engineering in Computer Science & Engineering</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
   </div>
 </div>
 
@@ -156,44 +155,62 @@
       <h3>E-Commerce web portal of chocolates </h3>
       <p> Built using HTML, CSS, BootStrap, JavaScript, jQuery for front end and Perl & AJAX for back end coding along with mySQL for database.
       </p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <a style="color: #ffffff" href="https://github.com/namrathasubramanya/EcommercePortalforChocolates">Github link</a>
+       <p>***********</p>
   </div>
    <div> 
       <h3>SDSU Marathon </h3>
       <p>Website built using HTML5, CSS, JavaScript, PHP and AJAX.</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <a style="color: #ffffff" href="https://github.com/namrathasubramanya/WebProjectSDSUMarathon">Github link</a>
+       <p>***********</p>
   </div>
    <div> 
       <h3>Walk My Dog</h3>
       <p>A Dog Walking and Dog Sitting Application for Busy Dog Owners</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <a style="color: #ffffff" href="https://github.com/namrathasubramanya/namrathasubramanya.github.io">Github link</a>
+       <p>***********</p>
   </div>
    <div> 
       <h3>Smart Lock</h3>
       <p>Smart Lock system built using Raspberry Pi and Python with Google OAuth</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <a style="color: #ffffff" href="https://github.com/namrathasubramanya/SmartLock-OAuth-PubNub">Github link</a>
+      <a style="color: #ffffff" href="https://www.pubnub.com/blog/iot-smart-lock-with-secure-access-management-raspberry-pi/">PubNub blog - Part 1</a>
+       <a style="color: #ffffff" href="https://hackernoon.com/build-your-own-iot-smart-lock-with-secure-access-management-955b31dbf97e">HackerNoon blog - Part 1</a>
+        <a style="color: #ffffff" href="https://www.pubnub.com/blog/implementing-google-oauth-2-and-pubnub-access-manager-with-smart-lock/">PubNub blog - Part 2</a>
+         <a style="color: #ffffff" href="https://hackernoon.com/implementing-oauth-0-using-google-sign-in-for-a-diy-secure-smart-lock-c918b63900b8">HackerNoon blog - Part 2</a>
+          <p>***********</p>
   </div>
    <div> 
       <h3>Image recognition and real-time alerts</h3>
       <p>Recognizing images using Google Cloud Vision API that sends real-time alerts using PubNub and ClickSend API</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <a style="color: #ffffff" href="https://github.com/namrathasubramanya/PubNub-VisionAPI-ClickSend">Github link</a>
+      <a style="color: #ffffff" href="https://www.pubnub.com/blog/image-recognition-using-vision-api-and/">PubNub blog</a>
+       <a style="color: #ffffff" href="https://medium.freecodecamp.org/how-to-use-the-google-cloud-vision-api-and-clicksend-to-keep-tabs-on-your-pets-6024b4daac29">FreeCodeCamp blog</a>
+        <p>***********</p>
   </div>
    <div> 
       <h3>Online Bidding Dashboard</h3>
       <p>An auction system built using ReactJS</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <a style="color: #ffffff" href="https://github.com/namrathasubramanya/reactjs-bidding-dashboard">Github link</a>
+      <a style="color: #ffffff" href="https://www.pubnub.com/blog/online-realtime-bidding-auction-app-react-pubnub/">PubNub blog</a>
+       <a style="color: #ffffff" href="https://hackernoon.com/how-to-build-an-online-realtime-bidding-auction-system-with-react-925cc5aa7937">Hackernoon blog</a>
+       <p>***********</p>
   </div>
    <div> 
       <h3>VR Bowling game</h3>
       <p>A multi-player VR game using WebVR and A-Frame</p>
-      <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
+      <a style="color: #ffffff" href="https://river-sprout.glitch.me/">Glitch link - Player 1</a>
+      <a style="color: #ffffff" href="https://sleet-stomach.glitch.me/">Glitch link - Player 2</a>
   </div>
-
 </div>
 
-<!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p> 
+   <h3 class="margin">CONTACT</h3> 
+   <p> Contact: (619)366-6287 </p>
+   <p> Email: namratha.subramanya@gmail.com </p>
+   <p> Medium: <a href="https://medium.com/@namrathasubramanya">https://medium.com/@namrathasubramanya</a> </p>
+   <p> Github: <a href="https://github.com/namrathasubramanya">https://github.com/namrathasubramanya</a> </p>
+   <p> Twitter: <a href="https://twitter.com/MSNamratha">https://twitter.com/MSNamratha</a> </p>
 </footer>
 
 </body>
